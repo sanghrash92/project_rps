@@ -10,61 +10,71 @@ const getComputerChoice = () => {
     };
 };
 
-const getPlayerChoice = () => {
-    const playerSelection = prompt('Please choose rock, paper or sissors?').toLowerCase();
-    return playerSelection;
-};
 
-let player = 0;
-let computer = 0;
+let win = 0;
+let loss = 0;
 let tie = 0;
 
 const playRound = (playerSelection, computerSelection) => {
 
     if (playerSelection === computerSelection) {
-        tie += 1;
-        return `It's a tie! Tie: ${tie}`;
+        return tie += 1;
     };
     if (playerSelection === 'rock') {
         if (computerSelection === 'paper') {
-            computer += 1;
-            return `You lose! Computer: ${computer}.`;
+            return loss += 1;
+            
         } else {
-            player += 1;
-            return `You win! Player: ${player}`;
+            return win += 1;
         };
         
     };
     if (playerSelection === 'paper') {
         if (computerSelection === 'scissors') {
-            computer += 1;
-            return `You lose! Computer: ${computer}.`;
+            return loss += 1;
         } else {
-            player += 1;
-            return `You win! Player: ${player}`;
+            return win += 1;
         };
     }
     if (playerSelection === 'scissors') {
         if (computerSelection === 'rock') {
-            computer += 1;
-            return `You lose! Computer: ${computer}.`;
+            return loss += 1;
         } else {
-            playerSelection += 1;
-            return `You win! Player: ${player}`;
+            return win += 1;
         };
     }
-    };
+};
 
-const game = () => {
-    for (let i = 0; i < 10; i++) {
-        const playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice();
-        console.log(`You chose ${playerSelection}!`);
-        console.log(`Opponent chose ${computerSelection}!`)
-        console.log(playRound(playerSelection, computerSelection));
-        console.log('Player:', player, 'Computer:', computer, 'Tie:', tie);
+const score = () => {
+    const w = document.querySelector('.win');
+    w.textContent = win;
+    const l = document.querySelector('.loss');
+    l.textContent = loss;
+    const t = document.querySelector('.tie');
+    t.textContent = tie;
+};
+
+function winOrLoss() {
+    if (win === 5) {
+        const declare = document.querySelector('.declaration');
+        declare.textContent = 'You win!'
+        return player.removeEventListener('click', game);
+    } else if (loss === 5) {
+        const declare = document.querySelector('.declaration');
+        declare.textContent = 'Computer wins!';
+        return player.removeEventListener('click', game);
     };
 };
 
+const player= document.querySelector('#player');
 
-game();
+
+const game = (e) => {
+    const playerSelection = e.target.id;
+    const computerSelection = getComputerChoice();
+    const play = playRound(playerSelection, computerSelection);
+    score();
+    winOrLoss();
+};
+
+player.addEventListener('click', game);
