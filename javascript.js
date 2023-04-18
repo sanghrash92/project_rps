@@ -1,5 +1,5 @@
 const getComputerChoice = () => {
-    random = Math.floor(Math.random() * 3);
+    let random = Math.floor(Math.random() * 3);
     switch (random) {
         case 0:
             return 'rock';
@@ -7,7 +7,7 @@ const getComputerChoice = () => {
             return 'paper';
         case 2:
             return 'scissors';
-    };
+    }
 };
 
 
@@ -19,29 +19,28 @@ const playRound = (playerSelection, computerSelection) => {
 
     if (playerSelection === computerSelection) {
         return tie += 1;
-    };
+    }
     if (playerSelection === 'rock') {
         if (computerSelection === 'paper') {
             return loss += 1;
             
         } else {
             return win += 1;
-        };
-        
-    };
+        }
+    }
     if (playerSelection === 'paper') {
         if (computerSelection === 'scissors') {
             return loss += 1;
         } else {
             return win += 1;
-        };
+        }
     }
     if (playerSelection === 'scissors') {
         if (computerSelection === 'rock') {
             return loss += 1;
         } else {
             return win += 1;
-        };
+        }
     }
 };
 
@@ -63,8 +62,8 @@ function winOrLoss() {
         const declare = document.querySelector('.declaration');
         declare.textContent = 'Computer wins!';
         return player.removeEventListener('click', game);
-    };
-};
+    }
+}
 
 const player= document.querySelector('#player');
 
@@ -72,7 +71,7 @@ const player= document.querySelector('#player');
 const game = (e) => {
     const playerSelection = e.target.id;
     const computerSelection = getComputerChoice();
-    const play = playRound(playerSelection, computerSelection);
+    playRound(playerSelection, computerSelection);
     score();
     winOrLoss();
 };
