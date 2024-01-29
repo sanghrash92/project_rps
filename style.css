@@ -1,98 +1,117 @@
+:root {
+  --white-color: #ffffff;
+}
+
 body {
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    background: black;
+  font-family: sans-serif;
+  background-image: url('./images/paw-sign-of-rock-paper-scissors-game.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.title {
-    margin-top: 50px;
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
 }
 
-.text {
-    text-align: center;
-    font-size: 40px;
-    color: #E67831;
+.header {
+  padding: 5px 0;
+  background: rgba(210, 62, 113, 0.3);
+  box-shadow: 0 0 20px 0 rgba(110, 82, 130, 0.7);
 }
 
-.info {
-    padding-top: 25px;
-    color:#E67831;
-    font-size: 20px;
-    text-align: center;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#score {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    text-align: center;
-    margin: 30px;
-    padding: 10px;
-    color: white;
-    font-size: 20px;
+.flex-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  width: 500px;
+  margin: 60px auto;
+  font-size: 30px;
+  padding-top: -50px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px 0 rgba(110, 82, 130, 0.9);
 }
 
-#player {
-    margin: 30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 80px;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-}
-
-.declaration {
-    color: #fff579;
-    font-size: 50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-
-}
-
-#computer {
-    margin: 30px;
-    padding: 80px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-around;
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto;
+  height: 100px;
+  width: 500px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 button {
-    font-size: 15px;
-    padding: 8px 8px;
-    border-radius: 8px;
-    background-color: #f8e1d2;
-    border: 1px solid #f8e1d2;
-    color: #ac0800;
-    width: 100px;
-    height: auto;
+  font-size: 1.1rem;
+  width: 100px;
+  height: 60px;
+  background: linear-gradient(rgb(182, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27));
+  box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.5);
+  border: none;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.icons {
+  font-size: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+}
+
+.active {
+  transform: scale(1.5);
+}
+
+.gameProgress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: 50px 0 0 0;
+  width: 700px;
+  height: 150px;
+  background-color: var(--white-color);
+  box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.5);
+  opacity: 0.9;
+}
+
+#reset {
+  background: linear-gradient(#55680D, #71F53E, #116C31);
+  box-shadow: 0 0 20px 0 #3B7E20CC;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
 }
 
 
-.playerid, #computerid {
-    color: white;
-    text-align: center;
-    font-size: 40px;
+.resetButton {
+  margin: 100px auto;
+  height: 100px;
+  width: 500px;
+  text-align: center;
 }
 
-#computerid {
-    color: #90827a;
+button:active {
+  background-color: black;
+  box-shadow: inset 0px 0px 5px brown
 }
 
-.grid-item {
-    color: #ac0800;
-    margin-bottom: 5px;
-}
 
-img {
-    width: 40%;
-    height: auto;
-    border-radius: 20px;
-}
 
-button {
-    display: flex;
-    justify-content: center;
-    gap: 3px;
-    align-items: center;
-}

@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<HTML>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-compatible" content="ie-edge">
-        <title>rps</title> 
-        <link rel="stylesheet" href="style.css">
-        <script src="javascript.js" defer></script>
-    </head>
-    <body>
-        <div class="title">
-            <div class="text">ROCK,PAPER,AND SCISSORS</div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/694d6bc22e.js" crossorigin="anonymous"></script>
+    <script src="javascript.js" defer></script>
+    <title>RPS</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Rock, Paper, Scissor</h1>
+    </div>
+    <main class="container">
+        <div class="flex-item">
+            <div class="win winGrid">Player: 0</div>
+            <div class="loss lossGrid">Computer: 0</div>
+            <div class="tie tieGrid">Tie: 0</div>
         </div>
-        <div id="score">
-            <div class="grid-item">WIN</div>
-            <div class="grid-item">LOSS</div>
-            <div class="grid-item">TIE</div>
-            <div class="win"></div>
-            <div class="loss"></div>
-            <div class="tie"></div>
+        <div class="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissor</button>
         </div>
-        <div class = 'playerid'>PLAYER</div>
-    
-        <div id="player">
-            <button id="rock">rock<img src="icon/rock.jpg"></button>
-            <button id="paper">paper<img src="icon/paper.jpg"></button>
-            <button id="scissors">scissors<img src="icon/scissors.jpg"></button>
+        <div class="icons">
+            <i class="fa-solid fa-hand-back-fist"></i>
+            <i class="fa-solid fa-hand"></i>
+            <i class="fa-solid fa-hand-scissors"></i>
         </div>
-        
-        <div class="declaration"></div>
-        <div id="computer">
-            <button id="rock">rock<img src="icon/rock.jpg"></button>
-            <button id="paper">paper<img src="icon/paper.jpg"></button>
-            <button id="scissors">scissors<img src="icon/scissors.jpg"></button>
-        </div>
-        <div id="computerid">COMPUTER</div>
-    </body>
-</HTML>
+
+        <div class="gameProgress"><span class="firstpara">First to score 5 points wins the game</span></div>
+        <div class="resetButton"><button id="reset">Reset</button></div>
+    </main>
+</body>
+</html>
